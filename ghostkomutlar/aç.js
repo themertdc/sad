@@ -17,16 +17,17 @@ exports.run = async (client, message, args) => {
 
     message.channel.send(
       new Discord.MessageEmbed()
-        .setColor("ORANGE")
+        .setColor("#ffff00")
         .setDescription(`Ticket ${message.author} tarafından açıldı.`)
     );
     message.channel.setName(`ticket-${ad}`);
+    //
   } else {
     return message.channel.send(`Bu komutu bir bilet kanalında kullanın.`);
   }
 };
 exports.conf = {
-  enabled: true,
+  enabled: true, //
   guildOnly: true,
   aliases: [],
   permLevel: 0
@@ -34,4 +35,4 @@ exports.conf = {
 
 exports.help = {
   name: "aç"
-};
+}; //
