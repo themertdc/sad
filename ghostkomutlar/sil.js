@@ -17,8 +17,9 @@ exports.run = async (client, message, args) => {
 
     message.channel.send(
       new Discord.MessageEmbed()
-        .setColor("ORANGE")
+        .setColor("RED")
         .setDescription(`Bilet 5 saniye sonra ebediyen silinecek.`)
+        .setFooter("Lrows Ticket Tool | discord.gg/wenzy")
     );
     setTimeout(async () => {
       message.channel.delete();

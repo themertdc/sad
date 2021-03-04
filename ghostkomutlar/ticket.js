@@ -12,11 +12,12 @@ exports.run = async (client, message, args) => {
         `Mesajı göndereceğim kanalı ayarlamamışsın: ${prefix}ticket-kanal ayarla #channel`
       );
     client.channels
-      .get(kanalbelirle)
+      .cache.get(kanalbelirle)
       .send(
         new Discord.MessageEmbed()
-          .setTitle(`TIGER TICKET`)
-          .setColor("ORANGE")
+          .setTitle(`Ghost Ticket Tool`)
+          .setFooter(`Ghost Ticket Tool`, client.user.avatarURL())
+          .setColor("GREEN")
           .setDescription(`📩 tepkisine tıklayıp bir bilet oluşturabilirsiniz.`)
       )
       .then(m => {
@@ -26,24 +27,24 @@ exports.run = async (client, message, args) => {
         let aç = m.createReactionCollector(açç, { time: 0 });
 
         aç.on("collect", async reaction => {
-          const author = reaction.users.last();
-          reaction.remove(author.id);
+          const author = reaction.users.cache.last();
+          reaction.users.remove(author.id);
           const sd = await data.fetch(`ass.${message.guild.id}.${author.id}`);
 
           data.add(`numara.${message.guild.id}`, 1);
           const as = await data.fetch(`numara.${message.guild.id}`);
-          message.guild.createChannel(`ticket-${as}`).then(async s => {
-            data.add(`numara.${s.id}`, as); // Code World
+          message.guild.channels.create(`ticket-${as}`).then(async s => {
+            data.add(`numara.${s.id}`, as);
             data.set(`ass.${message.guild.id}.${author.id}`, s.id);
             data.set(
               `asd.${message.guild.id}.${s.id}.${author.id}`,
               "ticketaçma"
             );
-            let role = message.guild.roles.find(r => r.name === "@everyone");
-            s.overwritePermissions(role, { VIEW_CHANNEL: false });
-            message.guild.members.forEach(u => {
+            let role = message.guild.roles.cache.find(r => r.name === "@everyone");
+            s.createOverwrite(role, { VIEW_CHANNEL: false });
+            message.guild.members.cache.forEach(u => {
               if (u.hasPermission("MANAGE_GUILD")) {
-                s.overwritePermissions(u, {
+                s.createOverwrite(u, {
                   VIEW_CHANNEL: true,
                   SEND_MESSAGES: true,
                   MANAGE_MESSAGES: true,
@@ -51,20 +52,20 @@ exports.run = async (client, message, args) => {
                 });
               }
             });
-            s.overwritePermissions(author, {
+            s.createOverwrite(author, {
               VIEW_CHANNEL: true,
               SEND_MESSAGES: true
             });
             s.send(
               `${author}, Hoşgeldin!`,
               new Discord.MessageEmbed()
-                .setColor("ORANGE")
+                .setColor("GREEN")
                 .setDescription(
-                  `Hoş Geldiniz Sorununuz nedir ?
+                  `Çok yakın zaman da seninle ilgileneceğiz.
 Bileti kapatmak istersen: 🔒`
                 )
                 .setFooter(
-                  `Ticket of Daginik MC#Yeniden`,
+                  `Ghost - Ticketing without clutter`,
                   client.user.avatarURL
                 )
             ).then(m => {
@@ -74,8 +75,8 @@ Bileti kapatmak istersen: 🔒`
               let s23 = m.createReactionCollector(si, { time: 0 });
 
               s23.on("collect", async reaction => {
-                const author = reaction.users.last();
-                reaction.remove(author.id);
+                const author = reaction.users.cache.last();
+                reaction.users.remove(author.id);
                 m.react(`✅`);
                 m.react(`❌`);
                 let sil = (reaction, user) =>
@@ -85,25 +86,25 @@ Bileti kapatmak istersen: 🔒`
                   reaction.emoji.name === "❌" && user.id !== client.user.id;
                 let s2 = m.createReactionCollector(ss, { time: 0 });
                 s2.on("collect", async reaction => {
-                  s.fetchMessages({ limit: 10 }).then(async messages => {
+                  s.messages.fetch({ limit: 10 }).then(async messages => {
                     messages
                       .get(m.id)
-                      .reactions.get("✅")
+                      .reactions.cache.get("✅")
                       .removeAll();
-                    reaction.removeAll();
+                    reaction.users.removeAll();
                   });
                 });
                 sill.on("collect", async reaction => {
-                  let us = reaction.users.last();
-                  reaction.remove(us.id);
+                  let us = reaction.users.cache.last();
+                  reaction.users.remove(us.id);
                   s.send(
                     new Discord.MessageEmbed()
-                      .setColor("ORANGE")
+                      .setColor("#ffff00")
                       .setDescription(`Bilet ${us} tarafından kapatıldı.`)
                   );
                   s.setName(`closed-${as}`);
                   s.send(
-                    new Discord.MessageEmbed().setColor("ORANGE")
+                    new Discord.MessageEmbed().setColor("RED")
                       .setDescription(`:unlock:: Ticketi tekrar açar.
 
 :no_entry:: Ticketi siler.`)
@@ -120,12 +121,12 @@ Bileti kapatmak istersen: 🔒`
                     let geriaç = m2.createReactionCollector(geri, { time: 0 });
 
                     geriaç.on("collect", async reaction => {
-                      const author = reaction.users.last();
-                      m2.delete("500");
-                      reaction.remove(author.id);
+                      const author = reaction.users.cache.last();
+                      m2.delete({ timeout: 5000   });
+                      reaction.users.remove(author.id);
                       s.send(
-                        new Discord.MessageEmbed() // Code World
-                          .setColor("ORANGE")
+                        new Discord.MessageEmbed()
+                          .setColor("GREEN")
                           .setDescription(
                             `Bilet ${author} tarafından tekrar açıldı.`
                           )
@@ -134,13 +135,13 @@ Bileti kapatmak istersen: 🔒`
                     });
 
                     sill.on("collect", async reaction => {
-                      const author = reaction.users.last();
-                      reaction.remove(author.id);
+                      const author = reaction.users.cache.last();
+                      reaction.users.remove(author.id);
                       s.send(
                         new Discord.MessageEmbed()
-                          .setColor("ORANGE")
+                          .setColor("RED")
                           .setDescription(
-                            `Bilet 5 saniye sonra ebediyen silinecek.`
+                            `Bilet 5 saniye sonra tamamen silinecek.`
                           )
                       );
                       setTimeout(async () => {
