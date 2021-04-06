@@ -1,0 +1,45 @@
+
+{
+    "OKUMADANGECME" : "Aşağıdaki tamamen boş bırakılan yerlere ID girin OKUDUKTAN SONRA burayı silebilirsiniz",
+  
+    "sahip" : "796799886371717172",
+    "prefix" : ".",
+    "footer" : "Astarius ❤️",
+
+    "tag" : "ᐅ",
+    "sembol" : "ᐅ'",
+  
+    "yetkiliRol" : ["828994641474879489", "", ""],
+    "vipRol" : "8828559231526633501",
+    "boosterRol" : "",
+    "kayıtsızRol" : ["825457587431538728","825457587431538728"],
+    "erkekRol1" : "804037050994524251",
+    "erkekRol2" : "804037050994524251",
+    "kadınRol1" : "804037050994524251",
+    "kadınRol2" : "804037050994524251",
+
+    "sifirEmoji" : "825807749866323999",
+    "birEmoji" : "825807499684216852",
+    "ikiEmoji" : "825807520765313111",
+    "ucEmoji" : "825807550997463100",
+    "dortEmoji" : "825807585516060673",
+    "besEmoji" : "825807616152174633",
+    "altiEmoji" : "825807653749391393",
+    "yediEmoji" : "825807678034018315",
+    "sekizEmoji" : "825807708590309377",
+    "dokuzEmoji" : "825807730463211541",
+
+    "tagRol" : "804037046200827937",
+
+    "hosgeldinKanal" : "825475770310459412",
+    "hosgeldinMesajEmoji" : "825808834555281478",
+    "hosgeldinMesajYetkili": "825475770310459412",
+    "rulesKanal" : "804034207922913280",
+
+    "sohbetKanal" : "804037101204537374", 
+  
+    "botSesKanal" : "802477167354970112",
+  
+    "yes" : "823888538139492403",
+    "no" : "822879082617372723"
+}
