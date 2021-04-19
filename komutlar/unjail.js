@@ -1,55 +1,39 @@
-const Discord = require('discord.js');
-const ayarlar = require("../ayarlar.json");
-//erdemçakıroğlu
-exports.run = async (client, message, args) => {
-  let prefix = ayarlar.prefix
-  let yetkili = ayarlar.jailyetkili
-  let jaillogkanal = ayarlar.jaillog
-  let verilecekrols = ayarlar.verilecekrols
-  let cezalı = ayarlar.cezalı
-//erdemçakıroğlu
-
- 
-  let erdembots = new Discord.MessageEmbed()
- .setDescription(`**Bu komudu kullanabilmek için** <@&${yetkili}>  **yetkisine sahip olmalısın!**`)
- if (!message.member.roles.cache.get(yetkili)) return message.channel.send(erdembots) //erdemçakıroğlu
+const splasheNn = require('discord.js');
+const ayarlar = require('../ayarlar.json')
+exports.run = function(client, message, args) {//splashen
+  let abone = message.mentions.members.first()
+  let log = ayarlar.jailLOG
+  let kayıtlı = ayarlar.kayıtlıROL
+  let rol = ayarlar.jailROL
+  if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Yetkin yok')
+   if(!abone) return message.channel.send('Jailden çıkaracağın kişiyi etiketlemelisin.')
+  var role = message.guild.roles.find(role => role.id === rol); 
+  abone.removeRole(rol);
   
-let kullanıcı = message.mentions.users.first()
-if (!kullanıcı) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setDescription(`> **Lütfen Bir Üye Etiketle!**\n\n> Doğru Kullanım: **\`${prefix}unjail-k <@kullanıcı>\`**`));
-let user = message.mentions.users.first();
-let rol = message.mentions.roles.first()
-let member = message.guild.member(kullanıcı)
-member.roles.add(verilecekrols)
-member.roles.remove(cezalı)
-//erdemçakıroğlu
-  //erdemçakıroğlu
-    //erdemçakıroğlu
-   
-
-const erdembotss = new Discord.MessageEmbed()
-.setAuthor('Bir Üye Cezalıya Çıkarıldı')
-.addField(`Jailden Çıkarılan Kullanıcı`,` ${kullanıcı}`)
-.addField(`Jailden Çıkaran Yetkili`,` <@${message.author.id}>`)
-.addField(`Jailden Çıkarılınca Verilen Roller`, `<@&${verilecekrols}>`)
-.setThumbnail( message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-client.channels.cache.get(jaillogkanal).send(erdembotss)//Log Kanal İd
+  let embed2 = new splasheNn.RichEmbed()
+  .setTitle(` <a:jke:751558669585612830> • __\`Bir Kullanıcı Jailden Çıkarıldı\`__   `)
+  .setDescription(`
+<a:jke:751558669585612830> • __**\`Çıkaran Yetkili\`**__ ${message.author}
+<a:jke:751558669585612830> • __**\`Çıkarılan Kullanıcı\`**__ ${abone}`)
+  .setThumbnail(abone.user.avatarURL)
   
-  let erdemcode = new Discord.MessageEmbed()
-.setDescription(`${kullanıcı} Adlı Kişisinin <@&${cezalı}> Rolü Alınarak ,<@&${verilecekrols}> Rolü Geri Verildi! `) 
-return message.channel.send(erdemcode);
   
-}
+  let embed = new splasheNn.RichEmbed()
+  .setTitle(` <a:jke:751558669585612830> • __\` Kullanıcı Başarıyla Jailden Çıkarıldı\`__   `)
+  .setDescription(`<a:jke:751558669585612830> • __**\`Yetkili\`**__ ${message.author}`)
+  .setThumbnail(abone.user.avatarURL)
+  message.channel.send(embed).then(m => m.delete(4000))
+  client.channels.get(ayarlar.log).send(embed2)
+};
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: ["unj","un"],
-  kategori: "Yetkili Komutları",
+  guildOnly: false,
+  aliases: ['jail-al'],
   permLevel: 0
-}
+};
 
 exports.help = {
-  name: 'unjail',
-  description: "Etiketlenen kişinin tüm rollerini alıp jail'e atar.",
-  usage: '!jail @etiket Sebep'
-}
+  name: 'unjail'
+};
+//splashen

@@ -1,23 +1,6 @@
 {
-  "prefix": ".",
+  "prefix": "!",
   "token": "",
-  "sahip": "",
-  
-  "durum": "vcodes.xyz",
-  "botses": "",
-  
-  "susturulmuş":"",
-  "cezalı":"", 
- 
-  "banyetkili":"",
-  "jailyetkili":"",
-  "muteyetkili":"",
-  
-  "mutelog":"",
-  "banlog":"",
-  "jaillog":"",
-  "sikayet":"",
-  
-  "verilecekrols":"",
-  "tag": ""
-}
+  "log" : "832678134284288050",
+  "otorol" : "775816737601880114"
+} 
