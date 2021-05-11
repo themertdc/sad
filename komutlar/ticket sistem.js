@@ -5,17 +5,17 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const çekiliş = new Discord.MessageEmbed()
-    .setAuthor(`Eralp232's Client Archive  | Ticket Sistem`)
+    .setAuthor(`Rage Anarchy  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
-      "https://cdn.discordapp.com/attachments/823190721862959134/826104795839332402/standard_4.gif"
+      "https://cdn.discordapp.com/attachments/839144805904547845/841766194796167188/maskot-1_1_6.png"
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://cdn.discordapp.com/attachments/839144805904547845/841766194796167188/maskot-1_1_6.png"
     )
     .setDescription(
-      `🎫 Eralp232's Client Archive  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎫 Rage Anarchy Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ticket__** `,
@@ -50,7 +50,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `🎯  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎯 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎯 \`${prefix}iletişim\` | Eralp232's Client Archive  İletişim Bilgileri.`
+      `🎯  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎯 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz `
     );
   msg.channel.send(çekiliş);
 };

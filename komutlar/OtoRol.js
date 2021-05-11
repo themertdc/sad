@@ -5,7 +5,7 @@ let prefix = ayarlar.prefix;
 
 exports.run = (client, message, args) => {
   const embed = new Discord.MessageEmbed()
-    .setAuthor("Eralp232's Client Archive  | OtoRol", client.user.avatarURL())
+    .setAuthor("Rage Anarchy | OtoRol", client.user.avatarURL())
     .setColor("#00ff00")
     .addField(
       "__OTOROL Ayarlamak__",
