@@ -6,14 +6,14 @@ exports.run = async (client, message) => {
 
 
   const embedeğlence = new Discord.MessageEmbed()
-    .setAuthor(`Eralp232's Client Archive| Eğlence`)
+    .setAuthor(`Rage Anarchy | Eğlence`)
     .setTitle(``)
     .setColor(`BLACK`)
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🔔 Eralp232's Client Archive  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🔔 Rage Anarchy  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Steam Oyun__`,
@@ -72,7 +72,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `📙 \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📙 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 📙 \`${prefix}siteler\` | Eralp232's Client Archive  Sitelerini Görürsün`
+      `📙 \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📙 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz`
     );
   return message.channel.send(embedeğlence);
 };

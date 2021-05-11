@@ -4,14 +4,14 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`Eralp232's Client Archive   | Ban Sistem`)
+    .setAuthor(`Rage Anarchy | Ban Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://cdn.discordapp.com/attachments/839144805904547845/841766194796167188/maskot-1_1_6.png"
     )
     .setDescription(
-      `📛 Eralp232's Client Archive  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `📛 Rage Anarchy Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ban__**`,
@@ -30,7 +30,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `📌  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📌 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 📌 \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      `📌  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📌 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz `
     );
   msg.channel.send(seviye);
 };

@@ -4,14 +4,14 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`Eralp232's Client Archive| Öneri Sistem`)
+    .setAuthor(`Rage Anarchy | Öneri Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://cdn.discordapp.com/attachments/839144805904547845/841766194796167188/maskot-1_1_6.png"
     )
     .setDescription(
-      `Ⓜ️ Eralp232's Client Archivee Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `Ⓜ️ Rage Anarchy Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__ÖneriLog Ayarla__**`,

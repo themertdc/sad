@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
       .setColor("#00ff00")
       .setDescription(mesaj)
       .setFooter(
-        client.user.username + " | Eralp232's Client Archive Mute Sistemi",
+        client.user.username + " | Rage Anarchy Mute Sistemi",
         client.user.avatarURL()
       );
     return message.channel
@@ -34,13 +34,13 @@ exports.run = async (client, message, args) => {
     return hata(
       "Mutelenmesini istediğin kullanıcıyı belirtmelisin. Örnek kullanım: **" +
         process.env.prefix +
-        "sustur @Eralp232 1saat Spam**"
+        "sustur @Grington 1saat Spam**"
     );
   if (!süre)
     return hata(
       "Kullanıcının ne kadar muteli kalmasını istediğini belirtmelisin. Örnek kullanım: **" +
         process.env.prefix +
-        "sustur @Eralp232 1saat Spam**"
+        "sustur @Grington 1saat Spam**"
     );
   if (!sebep) sebep = "Bir neden girilmedi!";
 
