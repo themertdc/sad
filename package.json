@@ -1,38 +1,21 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "theark",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "index.js",
+  "description": "",
+  "main": "theark.js",
   "scripts": {
-    "start": "node ."
+    "start": "node theark.js"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
-    "discord-akairo": "^8.1.0",
-    "discord-giveaways": "^4.2.1",
-    "discord.js": "^12.3.1",
-    "enmap": "^5.7.3",
-    "express": "^4.17.1",
-    "js-yaml": "^3.14.0",
-    "moment": "^2.28.0",
-    "ms": "^2.1.2",
-    "parse-ms": "^2.1.0",
-    "path": "^0.12.7",
-    "quick.db": "^7.1.1"
+    "discord.js": "^12.5.0",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "mongoose": "^5.11.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0"
   },
   "engines": {
     "node": "12.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  }
 }

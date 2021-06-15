@@ -1,0 +1,6 @@
+{
+  "token": "NzA0NzY1ODI3MTQ4MTUyODYy.Xqh6Uw.hH3IkAr2mZUs3RWY8_KbMnhsLKc",
+  "prefix": ["!"],
+  "mongoUrl": "mongodb+srv://cheraph:cheraph2@dashboardtest.awopa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "owners": ["NzA0NzY1ODI3MTQ4MTUyODYy.Xqh6Uw.hH3IkAr2mZUs3RWY8_KbMnhsLKc"]
+}
